@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Blue_question_mark_icon.svg/1200px-Blue_question_mark_icon.svg.png"/>
+    <title>Who Are You? - The Importance of Self-Discovery</title>
+</head>
+<body>
+    <header id="header">  
+        <h1 id="page-heading">Who Are You?</h1>
+        <h2 id="page-sub-heading">The Importance of Self-Discovery</h2>
+    </header>
+
+    <main id="main">
+        <div id="text-container">
+            <h3 id="pre-quotes-text">Here’s what some of the greatest philosophers and minds had to say about the importance of self-discovery:</h3>
+            <section id="quotes-section">
+                <p class="quote">“Knowing yourself is the beginning of all wisdom.” - Aristotle</p>
+                <p class="quote">“At the center of your being, you have the answer; you know who you are and you know what you want.” - Lao Tzu</p>
+                <p class="quote">“And you? When will you begin that long journey into yourself?” - Rumi </p>
+                <p class="quote">“When I discover who I am, I’ll be free.” - Ralph Ellison</p>
+                <p class="quote">“The most difficult thing in life is to know yourself.” - Thales</p>
+                <p class="quote">There are three things extremely hard: steel, a diamond, and to know one’s self.”
+                – Benjamin Franklin </p>
+            </section>
+            <section id="post-quotes-text">
+                <p class="post-quotes-paragraph">Great advice, yet most of us go our entire lives without taking a time out to get to know ourselves.</p>
+                <p class="post-quotes-paragraph">Most people will skim through the questions on this list without taking this experience seriously. My challenge to you is to take this exercise very seriously because the positive results it can have in your life, both in your personal and business life, can be super natural.</p>
+                <p class="post-quotes-paragraph">This is your chance to take a time out and get clear about THE ONLY person you are going to spend every single second of the day with for the rest of your life.</p>
+                <p class="post-quotes-paragraph">To get the most out of life, you need to understand who you are. Whether you’re trying to get the most out of your career, start a business or find happiness in your relationships, it is vital that you know what you are made of and how you became that way.</p>
+                <p class="post-quotes-paragraph">No one knows or needs to know the answers to these very personal questions. This is a self-discovery questionnaire and it’s no one’s business except your own.</p>
+                <p class="post-quotes-paragraph">Be completely honest as you answer the questions. There is no scoring system – this is about you finding out about you.</p>
+            </section>
+            <section id="snippet">
+                <h3 id="snippet-text">Here's a little snippet of the questions that you'll be receiving.</h3>
+                <ol>
+                    <li>Describe each of your parents the way you remember them as a child.</li>
+                    <li>What’s the earliest memory you have of yourself as a child?</li>
+                    <li>How easy is it for you to trust someone?</li>
+                    <li>What five life changing events have impacted your identity the most?</li>
+                    <li>What are your biggest regrets in life?</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Complete the Form Below to Get the Full Questionnaire</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        <div class="form-group">
+                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <button type="submit" onclick="window.open('Who_are_you.pdf')">Download!</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwIBT3ey6zVR9niZb1D3vIai-bS1mtbdDuAavMv3-jXsnC-fH45JAXg/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Your download should begin "))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+          <script src="script.js"></script>
+
+</body>
+</html>
